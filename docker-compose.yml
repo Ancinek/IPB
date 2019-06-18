@@ -45,7 +45,9 @@ services:
     depends_on:
       - instapy
     environment:
-      - FILESYSTEM=windows
+      - FILESYSTEM=unix
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - instapy-net
   influxdb:
@@ -87,8 +89,6 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=instapy
       - MONGO_INITDB_ROOT_PASSWORD=instapysecret
-    ports:
-      - 27017:27017
     networks:
       - instapy-net
 
