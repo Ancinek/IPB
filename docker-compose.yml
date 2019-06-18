@@ -87,6 +87,8 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=instapy
       - MONGO_INITDB_ROOT_PASSWORD=instapysecret
+    ports:
+      - 27017:27017
     networks:
       - instapy-net
 
